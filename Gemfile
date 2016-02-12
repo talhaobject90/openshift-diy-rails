@@ -1,38 +1,76 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+ruby '2.2.2'
+gem 'rack', github: 'rack/rack'
+gem 'rails', github: "rails/rails"
+gem 'sprockets-rails', github: "rails/sprockets-rails"
+gem 'arel', github: "rails/arel"
+# Use sqlite3 as the database for Active Record
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'cloudinary'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-end
+#gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
+gem "mini_magick"
+gem 'puma'
+gem 'paper_trail'
+gem 'rufus-scheduler'
+gem 'delayed_job_active_record'
 
-gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
 
-# Use unicorn as the app server
+
+
+# gem 'the_role_api', '~> 3.0.0'
+# gem 'the_role', '~> 3.0.0'
+
+
+
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 
-# To use debugger
-# gem 'debugger'
+# Use ActiveModelSerializers to serialize JSON responses
+
+gem 'active_model_serializers', '~> 0.10.0.rc2'
+
+gem 'active-model-adapter-source', '~> 0.1.7'
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+ gem 'rack-cors'
+
+
+
+
+
+group :production do
+  gem 'pg' ,'0.18.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'mysql2', '~> 0.3.18'
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', github: 'rails/web-console'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
